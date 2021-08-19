@@ -1,38 +1,258 @@
-.App {
-  text-align: center;
+body, * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.c-landing {
+  width: 100vw;
+  height: auto;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 50px;
+  overflow: hidden;
+
+}
+
+.c-background-image {
+  position: absolute;
+  top: 0;
+  width: 115vw;
+  z-index: -1;
+}
+.c-logo {
+  margin-bottom: 50px;
+}
+
+.c-form-container {
+  max-width: 500px;
+  width: 100%;
+  padding: 35px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.c-form-heading {
+  margin-bottom: 25px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 23px;
+}
+
+.c-form-combo {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+.c-form-label {
+  margin-bottom: 5px;
+  font-size: 15px;
+  color: #3f3f46;
+}
+
+.c-form-input {
+  padding: 10px;
+  border: 1px solid #d4d4d8;
+  border-radius: 5px;
+  font-size: 18px;
+  transition-duration: 50ms;
+  outline: none;
+}
+
+.c-form-input.cc-wrong {
+  border: 2px solid #ff0000;
+}
+
+.c-form-input.cc-wrong::placeholder {
+  color: #ff0000;
+}
+
+.c-form-input:focus {
+  border: 2px solid #ce9d45;
+}
+
+.c-form-question-container {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.c-form-link {
+  text-decoration: none;
+  color: #5d55e7;
+  font-size: 16px;
+  font-weight: 400;
+  transition-duration: 100ms;
+  cursor: pointer;
+}
+
+.c-form-link:hover {
+  color: #352fa3;
+}
+
+.c-form-submit {
+  background-color: #ce9d45;
+  transition: 0.1s ease;
   color: white;
+  width: 100%;
+  margin-top: 15px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.c-form-submit:hover {
+  background-color: #997430;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.c-form-bottom-text {
+  margin-top: 25px;
+  width: 100%;
+  text-align: center;
+}
+
+.c-form-double-button-container {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cc-double {
+  width: 35%;
+  text-align: center;
+}
+
+.cc-white {
+  background-color: white;
+  color: black;
+  border: 1px solid #d4d4d8;
+}
+
+.cc-white:hover {
+  background-color: rgb(199, 199, 199);
+}
+
+/* SLIDER START*/
+.c-slider-container {
+  width: 100vw;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: conter;
+  align-items: center;
+  background-color: #061e35;
+}
+
+.c-slider {
+  max-width: 800px;
+}
+
+.c-slide {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
+.c-slide-icon {
+  width: 8%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-slide-text {
+  width: 92%;
+  padding-left: 5px;
+  text-align: left
+}
+
+.c-slide-text h2 {
+  margin-bottom: 15px;
+}
+
+.c-slide-text p {
+  margin-bottom: 20px;
+}
+
+.c-slide-icon img {
+  width: 100%;
+}
+
+
+.c-slider-dots {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.c-slider-dot {
+  margin: 0px 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+
+.c-slider-dot:hover {
+  background-color: rgb(83, 83, 83);
+}
+
+/* SLIDER END*/
+
+.c-gold-container {
+  background-color: #ce9d45;
+  padding: 50px;
+  text-align: center;
+}
+
+.c-gold-container h3 {
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.c-gold-container a{
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.1s ease-in-out;
+}
+
+.c-gold-container a:hover{
+  color: rgb(70, 70, 70);
+}
+
+.c-contact-container {
+  background-color: #061e35;
+  padding: 50px;
+  text-align: center;
+}
+
+.c-contact-container p {
+  color: #f7f8f8;
+  font-size: 16px;
+  line-height: 28px;
 }
