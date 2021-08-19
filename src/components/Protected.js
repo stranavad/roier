@@ -2,11 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Protected extends React.Component {
-    componentDidMount() {
-        this.props.updateState(this.props.user, this.props.email);
-
+    constructor(props) {
+        super(props);
         this.handleLogout = this.handleLogout.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
     }
+
+    componentDidMount() {
+        this.props.updateState(this.props.user, this.props.email); // Sending props to App.js, when page loads
+    }
+
     handleLogout() {
         this.props.handleLogout();
         this.props.history.push({

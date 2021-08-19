@@ -10,6 +10,7 @@ class Login extends React.Component {
             password: "",
             loggedIn: false,
             user: {},
+            // Next items for input design when you pass wrong credentials
             passwordStyle: "c-form-input",
             passwordPlaceholder: "*****",
             emailStyle: "c-form-input",
@@ -22,16 +23,15 @@ class Login extends React.Component {
     onChange = (e) => this.setState({[e.target.name]: e.target.value});
     signIn = (e) => {
         e.preventDefault();
-        console.log("Loggin in Login component")
         this.props.firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .then((userCredential) => {
-            console.log("Logging in");
             this.setState({
                 user: userCredential.user,
                 loggedIn: true,
             })
         })
-        .catch((error) => {
+            .catch((error) => {
+            // This code will change the design of inputs, when the credentials are wrong
             if (error.code === "auth/wrong-password") {
                 this.setState({
                     passwordStyle: "c-form-input cc-wrong",
@@ -46,6 +46,7 @@ class Login extends React.Component {
         });
   }
 
+    // When firebase login, set states is completed, the we redirect to /protected in methof below
     componentDidUpdate(prevProps) {
         if (this.state.loggedIn && this.state.loggedIn !== prevProps.loggedIn) {
             this.props.history.push({

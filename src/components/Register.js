@@ -10,6 +10,7 @@ class Register extends React.Component {
             password: "",
             user: {},
             loggedIn: false,
+            // Next items for input design when you pass wrong credentials
             passwordStyle: "c-form-input",
             passwordPlaceholder: "*****",
             emailStyle: "c-form-input",
@@ -32,7 +33,7 @@ class Register extends React.Component {
             })
         })
             .catch((error) => {
-                console.log(error.code);
+                // This code will change the design of inputs, when the credentials are wrong
                 if (error.code === "auth/weak-password") {
                     this.setState({
                         passwordStyle: "c-form-input cc-wrong",
@@ -47,6 +48,7 @@ class Register extends React.Component {
         });
     }
 
+    // When firebase login, set states is completed, the we redirect to /protected in methof below
     componentDidUpdate(prevProps) {
         if (this.state.loggedIn && this.state.loggedIn !== prevProps.loggedIn) {
             // Login was successful, redirecting to /protected

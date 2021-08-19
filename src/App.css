@@ -25,7 +25,8 @@ body {
 .c-background-image {
   position: absolute;
   top: 0;
-  width: 115vw;
+  min-width: 115vw;
+  min-height: 100%;
   z-index: -1;
 }
 .c-logo {
@@ -75,6 +76,10 @@ body {
 
 .c-form-input.cc-wrong::placeholder {
   color: #ff0000;
+}
+
+.c-form-input.cc-wrong:focus {
+  border: 2px solid #ff0000;
 }
 
 .c-form-input:focus {

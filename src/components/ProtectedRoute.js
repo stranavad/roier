@@ -9,7 +9,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
                 if (location.state !== undefined) { // if location.state is underfined, the page isn't a redirect from login or register
                     if (location.state.loggedIn) {
                         return <Component {...rest} {...props} email={location.state.email} firebase={location.state.firebase}/> // user is logged in
-                    } else { // this shouldn't run ever
+                    } else { // this should never run under normal circumstances
                         return <Redirect to={
                             {
                                 pathname: "/unauthorized",

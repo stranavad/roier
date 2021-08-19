@@ -1,6 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import styles from 'react-responsive-carousel/lib/styles/carousel.min.css';
+import styles from 'react-responsive-carousel/lib/styles/carousel.min.css'; // This throws, styles is defined but never user, that is incorrect, styles is used in <Carousel/>
 
 const Footer = () => {
     let slideLogo = require("./icon_person.png").default;

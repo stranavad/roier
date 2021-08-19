@@ -34,7 +34,7 @@ class App extends React.Component {
     this.updateState = this.updateState.bind(this);
   }
 
-  updateState = (user, email) => {
+  updateState = (user, email) => {  // Updating state when user logs in to /protected
     this.setState({
       user,
       email,
@@ -42,7 +42,7 @@ class App extends React.Component {
     });
   }
 
-  handleLogout = () => {
+  handleLogout = () => {  // used as a prop to /protected
     firebase.auth().signOut().then(() => {
       // Sign-out successful.
       this.setState({
